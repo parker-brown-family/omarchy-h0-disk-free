@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "parker.disk-free",
+  "name": "Disk free",
+  "version": "1.0.0",
+  "author": "parker",
+  "description": "Shows free space on a drive, red when it runs low",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "DiskFree.qml"
+  },
+  "barWidget": {
+    "displayName": "Disk free",
+    "description": "Free space on a drive, e.g. \"182G free\"",
+    "category": "System",
+    "allowMultiple": true,
+    "defaultSection": "right",
+    "defaults": {
+      "path": "/",
+      "interval": 60,
+      "lowPercent": 10
+    },
+    "schema": [
+      { "key": "path", "type": "string", "label": "Mount point" },
+      { "key": "interval", "type": "number", "label": "Refresh interval (seconds)" },
+      { "key": "lowPercent", "type": "number", "label": "Turn red below (% free)" }
+    ]
+  }
+}
